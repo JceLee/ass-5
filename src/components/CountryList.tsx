@@ -50,16 +50,6 @@ const CountryList: React.FC = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">Countries</h1>
-      <div className="country-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filteredCountries.map((country) => (
-          <CountryCard
-            key={country.name.common}
-            country={country}
-            onSelect={handleSelectCountry}
-          />
-        ))}
-      </div>
       <h2 className="text-2xl font-semibold text-center mt-12">
         Favorite Countries
       </h2>
@@ -70,6 +60,16 @@ const CountryList: React.FC = () => {
             country={country}
             onSelect={handleSelectCountry}
             isSelected={true}
+          />
+        ))}
+      </div>
+      <h1 className="text-3xl font-bold text-center mb-8">Countries</h1>
+      <div className="country-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {filteredCountries.map((country) => (
+          <CountryCard
+            key={country.name.common}
+            country={country}
+            onSelect={handleSelectCountry}
           />
         ))}
       </div>
